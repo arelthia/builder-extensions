@@ -10,7 +10,7 @@ function register_content_sidebars() {
                 'after_title' => '</h4>'
         );
 
- 		register_sidebar($sidebar);
+ 	register_sidebar($sidebar);
         $sidebar = array(
                 'id' => 'below_content_left_sidebar',
                 'name' => __('Below Content Left Sidebar'),
@@ -21,7 +21,7 @@ function register_content_sidebars() {
                 'after_title' => '</h4>'
         );
 
- 		register_sidebar($sidebar);
+ 	register_sidebar($sidebar);
 
         $sidebar = array(
                 'id' => 'below_content_right_sidebar',
@@ -37,24 +37,24 @@ function register_content_sidebars() {
 }
 add_action('widgets_init', 'register_content_sidebars');
 
-// add the widget area ONLY if there is any content in that widget area
+
 if ( is_active_sidebar( 'above_content_sidebar' ) ) {
         add_action( 'builder_module_render_element_block_contents_content', 'insert_above_content_sidebar');   // add sidebar
 }
 
 
-// add the widget area ONLY if there is any content in that widget area
+
 if ( is_active_sidebar( 'below_content_left_sidebar' ) ) {
         add_action( 'builder_module_render_element_block_contents_content', 'insert_below_content_left_sidebar', 98);   // add sidebar
 }
 
-// add the widget area ONLY if there is any content in that widget area
+
 if ( is_active_sidebar( 'below_content_right_sidebar' ) ) {
         add_action( 'builder_module_render_element_block_contents_content', 'insert_below_content_right_sidebar', 99 );
 }
 
 
-// display the top widget area
+
 function insert_above_content_sidebar($fields) {
 	
 	dynamic_sidebar( 'above_content_sidebar' );
@@ -65,7 +65,7 @@ function insert_above_content_sidebar($fields) {
 
 
 
-// display the top widget area
+
 function insert_below_content_left_sidebar($fields) {
 	
 		dynamic_sidebar( 'below_content_left_sidebar' );
